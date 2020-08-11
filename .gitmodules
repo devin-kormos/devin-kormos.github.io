@@ -1,6 +1,6 @@
 [submodule "apps/space-news"]
-	path = public/apps/space-news
+	path = apps/space-news
 	url = https://github.com/devin-kormos/space-news
 [submodule "apps/student-grade-table"]
-	path = public/apps/student-grade-table
+	path = apps/student-grade-table
 	url = https://github.com/devin-kormos/student-grade-table
