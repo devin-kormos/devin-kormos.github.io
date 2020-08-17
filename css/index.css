@@ -21,7 +21,7 @@ body{
 
 ol, ul {
     margin: 0;
-    padding-left: 2rem;
+    padding-left: .5rem;
     text-transform: uppercase;
 }
 
@@ -57,6 +57,16 @@ ol {
     position: relative;
 }
 
+ol {
+    counter-reset: item;
+    list-style-type: none;
+}
+
+ol li:before {
+    content: '0' counter(item, decimal) '. ';
+    counter-increment: item;
+}
+
 .col li a,
 .col li span,
 .btn {
@@ -67,16 +77,16 @@ ol {
     text-transform: uppercase;
 }
 
-.col li::before {
+.col li::after {
     content: "⬤";
     position: absolute;
-    left: -45px;
-    top: 30%;
+    left: -1rem;
+    top: 25%;
     font-size: .6rem;
     display: none;
 }
 
-.col li:hover::before {
+.col li:hover::after {
     display: block;
 }
 
