@@ -1,0 +1,110 @@
+body, html {
+    margin: 0;
+    font-family: 'VT323', monospace;
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font-family: 'Major Mono Display', monospace; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("../img/mountain1080p.jpg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+}
+
+ol, ul {
+    margin: 0;
+    padding-left: 2rem;
+    text-transform: uppercase;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/grainy5.png");
+    background-position: center center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 7vw 7vh;
+}
+
+.list {
+    padding-top: 3rem;
+    width: 40%;
+    user-select: none;
+    float: right;
+    padding-top: 3rem;
+}
+
+.lName {
+    font-size: 1.2rem;
+}
+
+ol {
+    margin-bottom: .25rem;
+}
+
+.col li {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.col li a,
+.col li span,
+.btn {
+    font-size: 1.35rem;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.col li::before {
+    content: "⬤";
+    position: absolute;
+    left: -45px;
+    top: 30%;
+    font-size: .6rem;
+    display: none;
+}
+
+.col li:hover::before {
+    display: block;
+}
+
+.btn {
+    color: #fff;
+    font-size: 1.35rem;
+    font-family: inherit;
+    font-weight: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.catto {
+    position: absolute;
+    bottom: -.7rem;
+    left: 0;
+    width: 15rem;
+    pointer-events: none;
+}

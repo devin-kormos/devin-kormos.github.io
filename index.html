@@ -4,8 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet"> -->
+    <link href="css/tooltip.css" rel="stylesheet">
+    <!-- <link href="https://clipboardjs.com/bower_components/primer-css/css/primer.css" rel="stylesheet"> -->
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
-    Null n Void
+    <div class="container">
+        <main class="col list">
+            <span class="lName">[memecx@personal]</span>
+            <ol>
+                <li><button class="btn" data-clipboard-demo data-clipboard-action="copy" data-clipboard-text="kixi#0001">discord</button></li>
+                <li><a href="" target="_blank">github</a></li>
+                <li><a href="https://steamcommunity.com/id/memecx" target="_blank">steam</a></li>
+            </ol>
+            <span class="lName">[memecx@apps]</span>
+            <ol>
+                <li><a href="">space news</a></li>
+                <li><a href="">guessify</a></li>
+                <li><a href="">memory match</a></li>
+            </ol>
+        </main>
+        <img class="catto" src="img/catto.gif" alt="catgif">
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script>
+$(function(){
+   $(document).on("contextmenu",function(e){
+      e.preventDefault()
+   })
+})
+
+var clipboardd = new Clipboard('[data-clipboard-demo]');
+
+clipboardd.on('success', function(e) {
+    e.clearSelection()
+    console.info('Action:', e.action)
+    console.info('Text:', e.text)
+    console.info('Trigger:', e.trigger)
+    showTooltip(e.trigger, 'Copied!')
+})
+
+clipboardd.on('error', function(e) {
+    console.error('Action:', e.action)
+    console.error('Trigger:', e.trigger)
+    showTooltip(e.trigger, fallbackMessage(e.action))
+})
+
+var btns = document.querySelectorAll('.btn')
+
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('mouseleave', clearTooltip)
+    btns[i].addEventListener('blur', clearTooltip)
+}
+
+function clearTooltip(e) {
+    e.currentTarget.setAttribute('class', 'btn')
+    e.currentTarget.removeAttribute('aria-label')
+}
+
+function showTooltip(elem, msg) {
+    elem.setAttribute('class', 'btn tooltipped tooltipped-s')
+    elem.setAttribute('aria-label', msg)
+}
+</script>
 </body>
 </html>
