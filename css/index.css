@@ -117,4 +117,5 @@ ol li:before {
     left: 0;
     width: 15rem;
     pointer-events: none;
+    user-select: none;
 }
